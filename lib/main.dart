@@ -50,13 +50,18 @@ class MyApp extends StatelessWidget {
 
                   Column(
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("부산으로", style: TextStyle(color: Colors.white, fontSize: 30.sp, fontWeight: FontWeight.bold),),
-                            Text("to busan", style: TextStyle(color: Colors.white, fontSize: 15.sp),),
-                          ],
+                        Container(
+                          padding: EdgeInsets.only(left: 20.w, top: 10.h,),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text("부산으로", style: TextStyle(color: Colors.white, fontSize: 30.sp, fontWeight: FontWeight.bold),)),
+                              Text("to busan", style: TextStyle(color: Colors.white, fontSize: 15.sp),),
+                            ],
+                          ),
                         ),
 
 
@@ -135,7 +140,7 @@ class MainButton extends StatelessWidget {
             //borderRadius: BorderRadius.circular(4),
           ),
           child:  Text(title,
-            style: TextStyle(fontSize: 15, fontFamily: 'SpoqaHanSansNeo',  color: Colors.black, ), textAlign: TextAlign.left, ),
+            style: TextStyle(fontSize: 13.sp, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.black, ), textAlign: TextAlign.left, ),
         ),
 
         // text button의 default padding값을 없애주는 코드

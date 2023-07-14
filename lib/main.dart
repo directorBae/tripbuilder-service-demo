@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tripbuilder_demo/constant.dart';
+import 'package:tripbuilder_demo/mainPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,78 +35,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             scaffoldBackgroundColor: AppColor.backgroundColor,
           ),
-          // builder: (context, widget) {
-          //   return MediaQuery(
-          //     data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-          //     child: widget!,
-          //   );
-          // },
-          home: Scaffold(
-            // appBar: AppBar(
-            //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            //   title: const Text('TripBuilder'),
-            // ),
-            body: Column(
-                children: <Widget>[
-
-                  Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(left: 20.w, top: 10.h,),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text("부산으로", style: TextStyle(color: Colors.white, fontSize: 30.sp, fontWeight: FontWeight.bold),)),
-                              Text("to busan", style: TextStyle(color: Colors.white, fontSize: 15.sp),),
-                            ],
-                          ),
-                        ),
-
-
-
-                        Row(
-                          children: [
-                            MainButton(title: "여행 성향\n테스트"),
-                            MainButton(title: "여행지\n키워드 분석"),
-                          ],
-                        ),
-
-                        Row(
-                          children: [
-                            MainButton(title: "여행지\n추천 서비스"),
-                            MainButton(title: "여행일정\n추천 서비스"),
-                          ],
-                        ),
-                      ],
-                    ),
-
-
-                  // Text(
-                  //   'You have pushed the button this many times:',
-                  // ),
-
-
-                  // get X sample
-                  // Obx(
-                  //       () => Text(
-                  //     '${controller.counter.value}',
-                  //     style: Theme.of(context).textTheme.headlineMedium,
-                  //   ),
-                  // ),
-
-
-
-                ],
-              ),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: controller.incrementCounter,
-            //   tooltip: 'Increment',
-            //   child: const Icon(Icons.add),
-            // ),
-          ),
+          home: MainPage(),
         );
       }
     );
@@ -113,43 +43,5 @@ class MyApp extends StatelessWidget {
 }
 
 
-// MainPage에 있는 버튼
-class MainButton extends StatelessWidget {
-  MainButton({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16.sp),
-      child: TextButton(
-        onPressed: (){
-
-        },
-        child: Container(
-          // 반응형으로 바꾸기
-          width: 150.w, height: 120.h,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.all(Radius.circular(15))
-            //borderRadius: BorderRadius.circular(4),
-          ),
-          child:  Text(title,
-            style: TextStyle(fontSize: 13.sp, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.black, ), textAlign: TextAlign.left, ),
-        ),
-
-        // text button의 default padding값을 없애주는 코드
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.zero,
-        ),
-      ),
-    );
-  }
-}
 
 

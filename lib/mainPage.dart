@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tripbuilder_demo/travelPropensityPage.dart';
-import 'package:tripbuilder_demo/travelKeyword.dart';
+import 'package:tripbuilder_demo/travelKeywordPage.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
+import 'package:tripbuilder_demo/travelRecommendPage.dart';
+import 'package:tripbuilder_demo/travelSchedulePage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -35,7 +37,7 @@ class MainPage extends StatelessWidget {
                 ),
                 MainButton(title: "여행지\n키워드 분석", icon: Icons.flight,
                   onPressed: (){
-                    Get.to(() => TravelKeyword());
+                    Get.to(() => TravelKeywordPage());
                   },
                 ),
               ],
@@ -44,8 +46,16 @@ class MainPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MainButton(title: "여행지\n추천 서비스", icon: Icons.question_answer_rounded,),
-                MainButton(title: "여행일정\n추천 서비스", icon: Icons.calendar_month,),
+                MainButton(title: "여행지\n추천 서비스", icon: Icons.question_answer_rounded,
+                  onPressed: (){
+                    Get.to(() => TravelRecommendPage());
+                  },
+                ),
+                MainButton(title: "여행일정\n추천 서비스", icon: Icons.calendar_month,
+                  onPressed: (){
+                    Get.to(() => TravelSchedulePage());
+                  },
+                ),
               ],
             ),
 
@@ -71,6 +81,7 @@ class MainPage extends StatelessWidget {
 
             SizedBox(height: 15.h,),
 
+            // 빈 흰 상자
             Align(
               alignment: Alignment.center,
               child: TextButton(

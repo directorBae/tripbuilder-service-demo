@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripbuilder_demo/UI/BackFloatingButton.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
 
-class TravelKeyword extends StatelessWidget {
-  const TravelKeyword({Key? key}) : super(key: key);
+class TravelKeywordPage extends StatelessWidget {
+  const TravelKeywordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

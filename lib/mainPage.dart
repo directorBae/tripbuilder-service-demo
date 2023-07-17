@@ -6,6 +6,7 @@ import 'package:tripbuilder_demo/travelKeywordPage.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
 import 'package:tripbuilder_demo/travelRecommendPage.dart';
 import 'package:tripbuilder_demo/travelSchedulePage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -31,8 +32,11 @@ class MainPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MainButton(title: "여행 성향\n테스트", icon: Icons.beach_access,
-                  onPressed: (){
-                    Get.to(() => TravelPropensityPage());
+                  onPressed: () async {
+                    final url = Uri.parse('https://stti.tripbuilder.co.kr/');
+                    if (await canLaunchUrl(url)) {
+                      launchUrl(url, mode: LaunchMode.externalApplication);
+                    }
                   },
                 ),
                 MainButton(title: "여행지\n키워드 분석", icon: Icons.flight,

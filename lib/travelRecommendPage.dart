@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
 import 'package:tripbuilder_demo/UI/TravelRecommendButton.dart';
+import 'package:tripbuilder_demo/constant.dart';
 import 'package:tripbuilder_demo/dataBase.dart';
 
 
@@ -14,7 +15,8 @@ class TravelRecommendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
+        decoration: backgroundGradient,
         padding: EdgeInsets.only(left: 13.w, right: 13.w, top: 20.h, bottom: 20.h),
         child: Column(
         children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tripbuilder_demo/constant.dart';
 import 'package:tripbuilder_demo/travelPropensityPage.dart';
 import 'package:tripbuilder_demo/travelKeywordPage.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
@@ -18,7 +19,8 @@ class MainPage extends StatelessWidget {
       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       //   title: const Text('TripBuilder'),
       // ),
-      body: Padding(
+      body: Container(
+        decoration: backgroundGradient,
         padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 20.h, bottom: 20.h),
         child: Column(
           children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tripbuilder_demo/UI/BackFloatingButton.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
+import 'package:tripbuilder_demo/constant.dart';
 
 class TravelKeywordPage extends StatelessWidget {
   const TravelKeywordPage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class TravelKeywordPage extends StatelessWidget {
       //),
 
       body: Container(
+        decoration: backgroundGradient,
         padding: EdgeInsets.only(left: 20.w, top: 25.h,),
         child: Column(
           children: [

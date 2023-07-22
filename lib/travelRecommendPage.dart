@@ -14,18 +14,24 @@ class TravelRecommendPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // 현재 높이를 구해옴.
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         decoration: backgroundGradient,
-        padding: EdgeInsets.only(left: 13.w, right: 13.w, top: 20.h, bottom: 20.h),
+        padding: EdgeInsets.all(paddingAll),
         child: Column(
         children: [
           TitleClass(title: "여행지 추천", subTitle: "travel recommendation"),
 
-          SizedBox(height: 25.h,),
+          SizedBox(height: 25,),
 
+          // 이거 수치 다시 계산 (이후 통일해서 리소스 분리시켜놓기)
           Container(
-            width: 500.w, height: 675.h,
+            width: _width-30, height: _height-190,
             // scroll bar
             child: Scrollbar(
               controller: _scrollController,
@@ -53,7 +59,8 @@ class TravelRecommendPage extends StatelessWidget {
                             TravelRecommendButton(
                               title: destinationList[index][0],
                               subTitle: destinationList[index][1],
-                              imagePath: destinationList[index][1]+".jpg",
+                              imagePath: "seoul1.jpg",
+                              // imagePath: destinationList[index][1]+".jpg",
                             ),
                             SizedBox(height: 30.h,)
                           ],

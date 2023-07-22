@@ -58,17 +58,17 @@ class TravelRecommendButton extends StatelessWidget {
           // 제목과 부제목
           children: [
             Container(
-              padding: EdgeInsets.only(right: 10.w),
+              padding: EdgeInsets.only(right: 10),
               alignment: Alignment.bottomRight,
               child: Text(title,
-                style: TextStyle(fontSize: 22.sp, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.white, ), textAlign: TextAlign.left, ),
+                style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.white, ), textAlign: TextAlign.left, ),
             ),
 
             Container(
               padding: EdgeInsets.only(right:10.w, bottom: 18.h),
               alignment: Alignment.bottomRight,
               child: Text(subTitle,
-                style: TextStyle(fontSize: 15.sp, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.white, ), textAlign: TextAlign.left, ),
+                style: TextStyle(fontSize: 15, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.white, ), textAlign: TextAlign.left, ),
             ),
           ],
         ),

@@ -5,6 +5,8 @@ import 'package:tripbuilder_demo/UI/TravelRecommendButton.dart';
 import 'package:tripbuilder_demo/constant.dart';
 import 'package:tripbuilder_demo/dataBase.dart';
 
+
+
 class TravelSchedulePage extends StatelessWidget {
   TravelSchedulePage({Key? key}) : super(key: key);
 
@@ -12,61 +14,73 @@ class TravelSchedulePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // 현재 높이를 구해옴.
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         decoration: backgroundGradient,
-        padding: EdgeInsets.only(left: 13.w, right: 13.w, top: 20.h, bottom: 20.h),
+        padding: EdgeInsets.all(paddingAll),
         child: Column(
-        children: [
-          TitleClass(title: "여행지일정 추천", subTitle: "course recommendation"),
+          children: [
+            TitleClass(title: "여행일정 추천", subTitle: "course recommendation"),
 
-          SizedBox(height: 25.h,),
+            SizedBox(height: 25,),
 
-          Container(
-            width: 500.w, height: 675.h,
-            // scroll bar
-            child: Scrollbar(
-              controller: _scrollController,
-              thickness: 5,
-              radius: Radius.circular(10),
-              //scrollbarOrientation: ScrollbarOrientation.right,
-              child: NotificationListener<OverscrollIndicatorNotification>(
-                onNotification: (OverscrollIndicatorNotification overScroll) {
-                  overScroll.disallowGlow();
-                  return false;
-                },
+            // 이거 수치 다시 계산 (이후 통일해서 리소스 분리시켜놓기)
+            Container(
+              width: _width-30, height: _height-190,
+              // scroll bar
+              child: Scrollbar(
+                controller: _scrollController,
+                thickness: 5,
+                radius: Radius.circular(10),
+                //scrollbarOrientation: ScrollbarOrientation.right,
+                child: NotificationListener<OverscrollIndicatorNotification>(
+                  onNotification: (OverscrollIndicatorNotification overScroll) {
+                    overScroll.disallowGlow();
+                    return false;
+                  },
 
-                // listview와 스크롤 화면
-                child: SingleChildScrollView(
-                  controller: _scrollController,
-                  child: Column(
-                    children: [
-                      ListView.builder(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: destinationList.length,
-                        itemBuilder: (_, index) {
-                          return Column(
-                            children: [
-                              TravelRecommendButton(
-                                title: destinationList[index][0],
-                                subTitle: destinationList[index][1],
-                                imagePath: destinationList[index][1]+".jpg",
-                              ),
-                              SizedBox(height: 30.h,)
-                            ],
-                          );
-                        },
-                      ),
-                    ],
+                  // listview와 스크롤 화면
+                  child: SingleChildScrollView(
+                    controller: _scrollController,
+                    child: Column(
+                      children: [
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: destinationList.length,
+                          itemBuilder: (_, index) {
+                            return Column(
+                              children: [
+                                TravelRecommendButton(
+                                  title: destinationList[index][0],
+                                  subTitle: destinationList[index][1],
+                                  imagePath: "seoul1.jpg",
+                                  // imagePath: destinationList[index][1]+".jpg",
+                                ),
+                                SizedBox(height: 30.h,)
+                              ],
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
     );
   }
 }
+
+
+
+
+

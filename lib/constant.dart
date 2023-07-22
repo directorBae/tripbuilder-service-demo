@@ -1,4 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+
+String city = "Seoul";
+double paddingAll = 17;
 
 class AppColor {
   const AppColor._();
@@ -22,6 +27,8 @@ BoxDecoration backgroundGradient = const BoxDecoration(
     AppColor.backgroundGradient3,
     AppColor.backgroundGradient4,
   ],
+    // gradient 간격 조절
+    stops: [0.0, 0.3, 0.7, 1],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   ),

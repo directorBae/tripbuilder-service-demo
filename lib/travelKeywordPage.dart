@@ -16,10 +16,10 @@ class TravelKeywordPage extends StatelessWidget {
 
       body: Container(
         decoration: backgroundGradient,
-        padding: EdgeInsets.only(left: 20.w, top: 25.h,),
+        padding: EdgeInsets.all(paddingAll),
         child: Column(
           children: [
-            TitleClass(title: "키워드 분석", subTitle: "keywords for Busan"),
+            TitleClass(title: "키워드 분석", subTitle: "keywords for ${city}"),
 
             SizedBox(height: 20.h,),
 

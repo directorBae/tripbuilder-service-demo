@@ -12,121 +12,129 @@ import 'package:url_launcher/url_launcher.dart';
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
+
+    double _height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // appBar: AppBar(
       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       //   title: const Text('TripBuilder'),
       // ),
-      body: Container(
-        decoration: backgroundGradient,
-        padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 20.h, bottom: 20.h),
-        child: Column(
-          children: [
+      body: SingleChildScrollView(
+        child: Container(
+          height: _height,
+          decoration: backgroundGradient,
+          padding: EdgeInsets.all(paddingAll),
+          child: Column(
+            children: [
 
 
-            TitleClass(title: "부산으로", subTitle: "to Busan"),
+              // TitleClass(title: "부산으로", subTitle: "to Busan"),
+              TitleClass(title: "서울로", subTitle: "to ${city}"),
 
-            SizedBox(height: 10.h,),
+              SizedBox(height: 10.h,),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                MainButton(title: "여행 성향\n테스트", icon: Icons.beach_access,
-                  onPressed: () async {
-                    final url = Uri.parse('https://stti.tripbuilder.co.kr/');
-                    if (await canLaunchUrl(url)) {
-                      launchUrl(url, mode: LaunchMode.externalApplication);
-                    }
-                  },
-                ),
-                MainButton(title: "여행지\n키워드 분석", icon: Icons.flight,
-                  onPressed: (){
-                    Get.to(() => TravelKeywordPage());
-                  },
-                ),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                MainButton(title: "여행지\n추천 서비스", icon: Icons.question_answer_rounded,
-                  onPressed: (){
-                    Get.to(() => TravelRecommendPage());
-                  },
-                ),
-                MainButton(title: "여행일정\n추천 서비스", icon: Icons.calendar_month,
-                  onPressed: (){
-                    Get.to(() => TravelSchedulePage());
-                  },
-                ),
-              ],
-            ),
-
-            SizedBox(height: 10.h,),
-
-            // Text(
-            //   'You have pushed the button this many times:',
-            // ),
-
-
-            // get X sample
-            // Obx(
-            //       () => Text(
-            //     '${controller.counter.value}',
-            //     style: Theme.of(context).textTheme.headlineMedium,
-            //   ),
-            // ),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: controller.incrementCounter,
-            //   tooltip: 'Increment',
-            //   child: const Icon(Icons.add),
-            // ),
-
-            SizedBox(height: 15.h,),
-
-            // 빈 흰 상자
-            Align(
-              alignment: Alignment.center,
-              child: TextButton(
-                onPressed: (){
-
-                },
-
-                // text button의 default padding값을 없애주는 코드
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  // 반응형으로 바꾸기
-                  width: 350.w, height: 170.h,
-                  padding: EdgeInsets.only(left:15.sp, right:15.sp, top:15.sp, ),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    //borderRadius: BorderRadius.circular(4),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
-                        spreadRadius: 0,
-                        blurRadius: 5.0,
-                        offset: Offset(5, 5), // changes position of shadow
-                      ),
-                    ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MainButton(title: "여행 성향\n테스트", icon: Icons.beach_access,
+                    onPressed: () async {
+                      final url = Uri.parse('https://stti.tripbuilder.co.kr/');
+                      if (await canLaunchUrl(url)) {
+                        launchUrl(url, mode: LaunchMode.externalApplication);
+                      }
+                    },
                   ),
-                  child:  Column(
-                    children: [
+                  MainButton(title: "여행지\n키워드 분석", icon: Icons.flight,
+                    onPressed: (){
+                      Get.to(() => TravelKeywordPage());
+                    },
+                  ),
+                ],
+              ),
 
-                    ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MainButton(title: "여행지\n추천 서비스", icon: Icons.question_answer_rounded,
+                    onPressed: (){
+                      Get.to(() => TravelRecommendPage());
+                    },
+                  ),
+                  MainButton(title: "여행일정\n추천 서비스", icon: Icons.calendar_month,
+                    onPressed: (){
+                      Get.to(() => TravelSchedulePage());
+                    },
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 10.h,),
+
+              // Text(
+              //   'You have pushed the button this many times:',
+              // ),
+
+
+              // get X sample
+              // Obx(
+              //       () => Text(
+              //     '${controller.counter.value}',
+              //     style: Theme.of(context).textTheme.headlineMedium,
+              //   ),
+              // ),
+              // floatingActionButton: FloatingActionButton(
+              //   onPressed: controller.incrementCounter,
+              //   tooltip: 'Increment',
+              //   child: const Icon(Icons.add),
+              // ),
+
+              SizedBox(height: 15.h,),
+
+              // 빈 흰 상자
+              Align(
+                alignment: Alignment.center,
+                child: TextButton(
+                  onPressed: (){
+
+                  },
+
+                  // text button의 default padding값을 없애주는 코드
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                  ),
+                  child: Container(
+                    // 반응형으로 바꾸기
+                    width: 350.w, height: 170.h,
+                    padding: EdgeInsets.only(left:15.sp, right:15.sp, top:15.sp, ),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      //borderRadius: BorderRadius.circular(4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 0,
+                          blurRadius: 5.0,
+                          offset: Offset(5, 5), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child:  Column(
+                      children: [
+
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
 
-          ],
+            ],
+          ),
         ),
       ),
 
@@ -167,7 +175,7 @@ class MainButton extends StatelessWidget {
         ),
         child: Container(
           // 반응형으로 바꾸기
-          width: 160.w, height: 170.h,
+          width: 160.w, height: 150.w,
           padding: EdgeInsets.only(left:15.sp, right:15.sp, top:15.sp, ),
           alignment: Alignment.center,
           decoration: BoxDecoration(

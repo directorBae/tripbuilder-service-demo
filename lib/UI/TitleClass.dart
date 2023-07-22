@@ -24,8 +24,8 @@ class TitleClass extends StatelessWidget {
         children: [
           Align(
               alignment: Alignment.centerLeft,
-              child: Text(title, style: TextStyle(color: Colors.white, fontSize: 40.sp, fontWeight: FontWeight.bold),)),
-          Text(subTitle, style: TextStyle(color: Colors.white, fontSize: 25.sp),),
+              child: Text(title, style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),)),
+          Text(subTitle, style: TextStyle(color: Colors.white, fontSize: 25),),
         ],
       ),
     );

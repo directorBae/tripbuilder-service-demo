@@ -27,7 +27,9 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<!--  <link rel="icon" type="image/png" href="favicon.png"/>-->
 
   <title>tripbuilder_demo</title>
   <link rel="manifest" href="manifest.json">
@@ -40,6 +42,29 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB-HpwugRcTD8msQkTtwkDnO-ocoHge53o",
+      authDomain: "tripbuilder-demo.firebaseapp.com",
+      projectId: "tripbuilder-demo",
+      storageBucket: "tripbuilder-demo.appspot.com",
+      messagingSenderId: "288487204767",
+      appId: "1:288487204767:web:d6748f2777cf6bc529ffaa",
+      measurementId: "G-RDL0KVEVBJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

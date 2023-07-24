@@ -25,7 +25,7 @@ class TravelKeywordPage extends StatelessWidget {
 
             Container(
               alignment: Alignment.center,
-              child: Text("워드 클라우드 ~~", textAlign: TextAlign.center,),
+              child: Text("워드 클라우드\ncoming soon", textAlign: TextAlign.center,),
               color: Colors.white,
               width: 350.w, height: 350.h,
             )

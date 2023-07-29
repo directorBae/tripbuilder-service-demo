@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripbuilder_demo/constant.dart';
 
 
 class TravelRecommendButton extends StatelessWidget {
@@ -27,9 +28,12 @@ class TravelRecommendButton extends StatelessWidget {
         padding: EdgeInsets.zero,
       ),
       child: Container(
+        constraints: BoxConstraints(
+          maxWidth: maxWidth-70
+        ),
         // 반응형으로 바꾸기
         width: 350.w, height: 170.h,
-        padding: EdgeInsets.only(left:15.sp, right:15.sp, ),
+        padding: EdgeInsets.only(left:17, right:17, ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.grey[200],
@@ -41,8 +45,9 @@ class TravelRecommendButton extends StatelessWidget {
             fit: BoxFit.cover,
             // color filter : 검정색으로 조금 덮기
             colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.25), BlendMode.srcATop),
-          ) : null ,
+                Colors.black.withOpacity(0.35), BlendMode.srcATop),
+          )
+              : null ,
           // 그림자
           boxShadow: [
             BoxShadow(
@@ -65,7 +70,7 @@ class TravelRecommendButton extends StatelessWidget {
             ),
 
             Container(
-              padding: EdgeInsets.only(right:10.w, bottom: 18.h),
+              padding: EdgeInsets.only(right:15, bottom: 20),
               alignment: Alignment.bottomRight,
               child: Text(subTitle,
                 style: TextStyle(fontSize: 15, fontWeight:FontWeight.bold, fontFamily: 'SpoqaHanSansNeo',  color: Colors.white, ), textAlign: TextAlign.left, ),

@@ -16,7 +16,7 @@ class TitleClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20.w, top: 25.h,),
+      padding: EdgeInsets.only(left: 20, top: 25,),
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

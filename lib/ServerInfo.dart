@@ -1,0 +1,1 @@
+String serverInfo = "http://52.:5000"; // 서버 주소

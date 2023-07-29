@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 String city = "Seoul";
 double paddingAll = 17;
+double maxWidth = 500;
 
 class AppColor {
   const AppColor._();
@@ -12,7 +13,7 @@ class AppColor {
   static const backgroundGradient2 = Color(0xFF24016E);
   static const backgroundGradient3 = Color(0xFF000000);
   static const backgroundGradient4 = Color(0xFF0071C3);
-  static const mainColor = Colors.blue;
+  static const mainColor = Color(0xFF45ADFF);
 
 }
 

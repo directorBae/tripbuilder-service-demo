@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tripbuilder_demo/Data/wordCloudData.dart';
 import 'package:tripbuilder_demo/UI/BackFloatingButton.dart';
 import 'package:tripbuilder_demo/UI/TitleClass.dart';
 import 'package:tripbuilder_demo/constant.dart';
+import 'package:word_cloud/word_cloud.dart';
 
 class TravelKeywordPage extends StatelessWidget {
   const TravelKeywordPage({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class TravelKeywordPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     double _width = MediaQuery.of(context).size.width;
+    WordCloudData mydata = WordCloudData(data: wordcloudData);
 
     return Scaffold(
       //appBar: AppBar(
@@ -34,7 +37,7 @@ class TravelKeywordPage extends StatelessWidget {
 
                 SizedBox(height: 20.h,),
 
-                Container(
+                /*Container(
                   constraints: BoxConstraints(
                     maxWidth: maxWidth-70
                   ),
@@ -42,7 +45,22 @@ class TravelKeywordPage extends StatelessWidget {
                   child: Text("워드 클라우드\ncoming soon", textAlign: TextAlign.center,),
                   color: Colors.white,
                   width: 350.w, height: 350.h,
-                )
+                ),*/
+
+                SizedBox(height: 20,),
+
+                Container(
+                  width: maxWidth-60>350.w ? 350.w : maxWidth-60,
+                  height: 600.h,
+                  //color: Colors.white54,
+                  child: WordCloudView(
+                    data: mydata,
+                    mapwidth: maxWidth-60>350.w ? 350.w : maxWidth-60,
+                    mapheight: 600.h,
+                    fontWeight: FontWeight.bold,
+                    colorlist: [Colors.white, Colors.white, Colors.white, Colors.white70, Colors.white54],
+                  ),
+                ),
               ],
             ),
           ),

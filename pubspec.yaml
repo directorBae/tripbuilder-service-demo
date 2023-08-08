@@ -54,6 +54,7 @@ dev_dependencies:
   dio:
   auto_size_text:
   fluttertoast:
+  word_cloud: ^1.0.1
 
 
 
